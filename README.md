@@ -22,7 +22,7 @@ The dataset can be downloaded from [here](https://drive.google.com/file/d/1OVOx6
 | Depth Resolution | Varying (same as corresponding image) |
 | Depth Annotation Type | Flow from stereo images (disparity) |
 | Dense Annotation? | :heavy_check_mark: |
-| Metric Depth? | Pseudo-depth |
+| Metric Depth? | Pseudo-metric |
 | Depth Sensor | FlowNet 2.0 |
 | Depth Sensor Capacity | - |
 | Additional Annotations | Depth consistency mask, instance mask |
@@ -79,7 +79,7 @@ The dataset can be downloaded from [here](http://files.is.tue.mpg.de/jwulff/sint
 The depth annotation is given both as `.png` and `.dpt` files. For the latter, the authors provide a (Python) SDK along with the depth annotation to parse such files.
 
 
-### TUM [[3](http://ais.informatik.uni-freiburg.de/publications/papers/sturm12iros.pdf), [4](https://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Learning_the_Depths_of_Moving_People_by_Watching_Frozen_People_CVPR_2019_paper.pdf)]
+### TUM [[3](http://ais.informatik.uni-freiburg.de/publications/papers/sturm12iros.pdf), [4](https://github.com/google/mannequinchallenge)]
 
 #### Dataset Access
 
