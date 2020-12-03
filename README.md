@@ -147,6 +147,111 @@ The dataset can be downloaded from [here](https://dataserv.ub.tum.de/index.php/s
 
 tbd
 
+### KITTI [[6]](http://www.cs.toronto.edu/~urtasun/publications/geiger_et_al_cvpr12.pdf)
+
+#### Dataset Access
+
+The dataset can be downloaded from [here](http://www.cvlibs.net/datasets/kitti/eval_depth.php?benchmark=depth_prediction).
+We recommend the download script from [here](https://github.com/nianticlabs/monodepth2)
+
+#### Dataset Properties
+
+##### Meta Data:
+
+| Property  | Value |
+| :----- | :---- |
+| # Instances (train + test) | 82891 + 652 |
+| Image Resolution | 1242 x 375 (Small percentage of images slightly varying) |
+| Depth Resolution | 1242 x 375  |
+| Depth Annotation Type | RGB-D |
+| Dense Annotation? | :heavy_multiplication_x: |
+| Metric Depth? | Metric |
+| Depth Sensor | Sparse LIDAR  |
+| Depth Sensor Capacity | 80 m |
+| Additional Annotations | Camera Intrinsics, Segmentations, Odometry, Tracking, Scene Flow, Object Detection |
+| Diversity | Low |
+
+##### Scene Types:
+
+| Name | Captured? |
+| :--- | :-------- |
+| Indoor | :heavy_multiplication_x: |
+| Outdoor | :heavy_check_mark: |
+
+#### Preprocessing
+
+tbd
+
+### NYUv2 [[7]](https://cs.nyu.edu/~silberman/papers/indoor_seg_support.pdf)
+
+#### Dataset Access
+
+The dataset can be downloaded from [here](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html).
+
+#### Dataset Properties
+
+##### Meta Data:
+
+| Property  | Value |
+| :----- | :---- |
+| # Instances (train + test) | 407,024 + 653 |
+| Image Resolution | 640 x 480 |
+| Depth Resolution | 640 x 480  |
+| Depth Annotation Type | RGB-D |
+| Dense Annotation? | For test set only|
+| Metric Depth? | Metric |
+| Depth Sensor | Kinect V1  |
+| Depth Sensor Capacity | 10 m |
+| Additional Annotations | Camera Intrinsics, Class/Instance Segmentations |
+| Diversity | Low |
+
+##### Scene Types:
+
+| Name | Captured? |
+| :--- | :-------- |
+| Indoor | :heavy_check_mark: |
+| Outdoor | :heavy_multiplication_x:|
+
+#### Preprocessing
+
+tbd
+
+### DIODE [[8]](https://arxiv.org/pdf/1908.00463.pdf)
+
+#### Dataset Access
+
+The dataset can be downloaded from [here](https://diode-dataset.org/).
+
+#### Dataset Properties
+
+##### Meta Data:
+
+| Property  | Value |
+| :----- | :---- |
+| # Instances (train + test) | 24000 + 1500 (split into indoor/outdoor) [link](https://diode-dataset.org/#data-organization) |
+| Image Resolution | 1024 x 768 |
+| Depth Resolution | 1024 x 768  |
+| Depth Annotation Type | RGB-D |
+| Dense Annotation? |  :heavy_check_mark: |
+| Metric Depth? | Metric |
+| Depth Sensor | Faro Laser Scanner [link](https://www.faro.com/products/construction-bim/faro-focus/)  |
+| Depth Sensor Capacity | 100 m |
+| Additional Annotations | Camera Intrinsics, Surface Normals |
+| Diversity | High |
+| Possible Problems | Depth maps seem to have a lot of artifacts |
+
+##### Scene Types:
+
+| Name | Captured? |
+| :--- | :-------- |
+| Indoor | :heavy_check_mark: |
+| Outdoor |:heavy_check_mark: |
+
+
+#### Preprocessing
+
+tbd
+
 ## References
 
 * [1]: Xian, Ke et al. “Structure-Guided Ranking Loss for Single Image Depth Prediction.” 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) (2020): 608-617.
@@ -154,3 +259,6 @@ tbd
 * [3]: Sturm, J. et al. “A benchmark for the evaluation of RGB-D SLAM systems.” 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems (2012): 573-580.
 * [4]: Li, Z. et al. “Learning the Depths of Moving People by Watching Frozen People.” 2019 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) (2019): 4516-4525.
 * [5]: Koch, T. et al. “Evaluation of CNN-based Single-Image Depth Estimation Methods.” ECCV Workshops (2018).
+* [6]: Geiger et al. "Are we ready for autonomous driving? The KITTI vision benchmark suite" CVPR (2012)
+* [7]: Silberman et al. "Indoor Segmentation and Support Inference from RGBD Images" ECCV (2012)
+* [8]: Vasiljevic et al. "DIODE: A Dense Indoor and Outdoor DEpth Dataset" 2019
