@@ -1,6 +1,5 @@
 from glob import glob
 import tensorflow as tf
-import numpy as np
 
 
 def parse_record_entry(entry):
@@ -33,7 +32,7 @@ def load_tfrecord_dataset(file_names, batch_size, num_workers):
 
 
 if __name__ == "__main__":
-    dataset_path = "."
+    dataset_path = ".."
     file_names = glob(f"{dataset_path}/*.tfrecord")
     ds = load_tfrecord_dataset(file_names, batch_size=5, num_workers=1)
     for entry in ds:

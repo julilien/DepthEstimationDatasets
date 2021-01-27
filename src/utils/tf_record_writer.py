@@ -1,5 +1,7 @@
 import tensorflow as tf
 import numpy as np
+import os
+
 
 class TFRecordWriter:
     """
@@ -8,6 +10,7 @@ class TFRecordWriter:
     After initializing the writer you can add entries by calling "add_new_entry". This will fill the current tfrecord
     file or create a new one if the n_examples_per_file is reached
     """
+
     def __init__(self, path, n_examples_per_file):
         self.path = path
         self.n_examples_per_file = n_examples_per_file
@@ -20,7 +23,7 @@ class TFRecordWriter:
     def open_new_file(self):
         self.current_file_index += 1
         record_file_name = f"{self.current_file_index:06d}.tfrecord"
-        self.writer = tf.io.TFRecordWriter(record_file_name)
+        self.writer = tf.io.TFRecordWriter(os.path.join(self.path, record_file_name))
 
     def add_new_entry(self, image, depth):
         """
@@ -42,7 +45,7 @@ class TFRecordWriter:
             image=tf.train.Feature(bytes_list=tf.train.BytesList(value=[image_bytes])),
             depth=tf.train.Feature(bytes_list=tf.train.BytesList(value=[depth_bytes])),
             height=tf.train.Feature(int64_list=tf.train.Int64List(value=[height])),
-            width=tf.train.Feature(int64_list=tf.train.Int64List(value=[height])),
+            width=tf.train.Feature(int64_list=tf.train.Int64List(value=[width])),
         )
         example = tf.train.Example(features=tf.train.Features(feature=feature))
 
@@ -58,7 +61,7 @@ if __name__ == "__main__":
     image_example = np.array(np.random.rand(1000, 1000, 3) * 255, dtype=np.uint8)
     depth_example = np.array(np.random.rand(1000, 1000), dtype=np.float32)
 
-    writer = TFRecordWriter(".", n_examples_per_file=5)
+    writer = TFRecordWriter("..", n_examples_per_file=5)
     for i in range(20):
         writer.add_new_entry(image_example, depth_example)
     writer.close()
